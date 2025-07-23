@@ -1,0 +1,104 @@
+body {
+    /* --- UPDATED BACKGROUND --- */
+    /* Use the image from the static/images folder */
+    background-image: url('/static/images/bg2.png.jpg');
+
+    /* This makes the image cover the entire screen */
+    background-size: cover;
+
+    /* This prevents the image from repeating if it's too small */
+    background-repeat: no-repeat;
+
+    /* This ensures the image stays fixed in place while the content scrolls over it */
+    background-attachment: fixed;
+
+    /* This centers the image in the viewport */
+    background-position: center center;
+    /* --- END OF UPDATED BACKGROUND --- */
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /* Change text color to white for better readability on a dark background image */
+    color: #fff;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #fff !important;
+}
+
+.container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.event-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    /* Add a semi-transparent background to make text on cards readable */
+    background-color: whitesmoke;
+    backdrop-filter: blur(5px); /* Optional: Adds a cool "glass" effect */
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px F30px rgba(0, 0, 0, 0.5);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    color: black;/* Use the original orange for titles */
+    font-weight: bold;
+}
+
+/* Make card text white */
+.card-text, .card-body p {
+    color: #0e0e0e;
+}
+
+.btn-primary {
+    background-color: black;
+    border-color: black;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: black;
+    border-color: black;
+}
+
+.badge-success {
+    background-color: #27ae60;
+}
+
+.badge-warning {
+    background-color: #f39c12;
+}
+
+.badge-danger {
+    background-color: #c0392b;
+}
+
+.confirmation-box {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    /* Change confirmation text color to dark for readability */
+    color: #333;
+}
+
+.confirmation-box h1 {
+    color: #2ecc71;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}

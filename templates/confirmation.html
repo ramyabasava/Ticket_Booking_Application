@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmed!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!--
+      Step 1: Store the data from Flask in a hidden HTML element
+      using data-* attributes. This is clean and valid HTML.
+    -->
+    <div id="booking-data"
+         data-user-name="{{ user_name }}"
+         data-num-tickets="{{ num_tickets }}"
+         data-event-name="{{ event_name }}"
+         style="display: none;">
+    </div>
+
+    <div class="container mt-5">
+        <div class="confirmation-box">
+            <h1>✔ Booking Confirmed!</h1>
+            <p class="lead">Thank you, <strong>{{ user_name }}</strong>. Your ticket is secure!</p>
+            <hr>
+            <h4>Your Ticket Details:</h4>
+            <p><strong>Event:</strong> {{ event_name }}</p>
+            <p><strong>Number of Tickets:</strong> {{ num_tickets }}</p>
+            <p class="text-muted mt-4">A confirmation email has been notionally sent to your address.</p>
+            <a href="{{ url_for('index') }}" class="btn btn-primary mt-3">Book Another Event</a>
+        </div>
+    </div>
+
+    <!-- Our Custom JS for the Alert -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+        // Step 2: In our script, grab the data from the HTML element.
+        // This is pure JavaScript, so your editor will not show any errors.
+        const bookingDataElement = document.getElementById('booking-data');
+        const userName = bookingDataElement.dataset.userName;
+        const numTickets = bookingDataElement.dataset.numTickets;
+        const eventName = bookingDataElement.dataset.eventName;
+
+        // Step 3: Call the function from the external file with the retrieved data.
+        showConfirmationAlert(userName, numTickets, eventName);
+    </script>
+</body>
+</html>
